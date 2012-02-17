@@ -1,4 +1,5 @@
 package "vsftpd"
+package "libshadow-ruby1.8"
 
 template "/etc/vsftpd.conf" do
   source "vsftpd.conf.erb"
