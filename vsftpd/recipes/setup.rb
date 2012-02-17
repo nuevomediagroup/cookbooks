@@ -8,7 +8,8 @@ end
 user "#{node[:vsftpd2][:user]}" do
   comment "FTP user"
   gid "users"
-  home "/home/nuestratv"
+  supports :manage_home => true
+  home "/home/#{node[:vsftpd2][:user]}"
   shell "/bin/zsh"
   password node[:vsftpd2][:pwd_hash]
 end
