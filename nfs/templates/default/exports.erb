@@ -10,5 +10,5 @@
 #
 
 <% node[:nfs][:exports].each do |mount_point| -%>
-<%= mount_point %> <%= node[:nfs][:clients].map{|c| "#{c}(rw,async,no_root_squash)"}.join(" ")%>
+<%= mount_point %> 10.0.0.0/8(rw,async,no_root_squash)
 <% end %>
